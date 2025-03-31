@@ -1,9 +1,10 @@
 #!/bin/bash
+#set -xe
 
 yt-dlp \
     --embed-subs --write-thumbnail \
-    -o '%(series)/Season %(season_number)02d/%(series)s S%(season_number)02dE%(episode_number)02d - %(episode)s.%(ext)s' \
-    -o 'thumbnail:%(series)/Season %(season_number)02d/%(series)s S%(season_number)02dE%(episode_number)02d - %(episode)s-thumb.%(ext)s'  \
+    -o 'Season %(season_number)02d/%(series)s S%(season_number)02dE%(episode_number)02d - %(episode)s.%(ext)s' \
+    -o 'thumbnail:Season %(season_number)02d/%(series)s S%(season_number)02dE%(episode_number)02d - %(episode)s-thumb.%(ext)s'  \
     --parse-metadata ":(?P<meta0_language>)" \
     --parse-metadata " no: %(meta1_language)s" \
     --parse-metadata "episode:%(episode_number)s. %(episode)s" \
